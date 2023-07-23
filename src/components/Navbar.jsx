@@ -44,7 +44,7 @@ const Navbar = () => {
   const [linkCloseButtonMobile, setLinkCloseButtonMobile] = useState(false);
 
   return (
-    <div className="flex lg:justify-between justify-center items-center h-[10vh] -24 relative px-7">
+    <div className="flex lg:justify-between justify-center items-center h-[10vh] relative px-7">
       <Link
         href="/"
         className="font-bold text-2xl lg:flex-grow-0 flex-1 text-center"

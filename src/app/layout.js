@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
-        <div className="flex flex-col justify-betwee min-h-screen max-w-7xl mx-auto">
+        <div className="flex flex-col min-h-screen max-w-7xl mx-auto">
           <Navbar />
           <div className="flex-1">{children}</div>
           <Footer />

@@ -11,7 +11,7 @@ export default function Home() {
         <h1 className="lg:text-7xl text-3xl font-bold bg-gradient-to-b from-[#4a4c19] to-[#bbb] bg-clip-text text-transparent lg:text-left text-center">
           Moments Frozen in Time
         </h1>
-        <div className="lg:hidden w-1/2">
+        <div className="lg:hidden w-4/5">
           <HeroImage />
         </div>
         <p className="lg:text-2xl text-lg text-center font-bold lg:text-left">

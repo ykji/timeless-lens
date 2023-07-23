@@ -4,7 +4,7 @@ const Footer = () => {
   const date = new Date();
 
   return (
-    <div className="flex text-xs justify-between items-center h-12 text-white">
+    <div className="flex flex-col lg:flex-row gap-2 text-xs justify-between items-center py-3 lg:px-10 px-2 text-white mt-10">
       <div>{`© ${date.getFullYear()} TimelessLens. All rights reserved.`}</div>
       <div className="flex gap-3">
         <Image
