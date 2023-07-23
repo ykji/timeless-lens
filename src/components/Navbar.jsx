@@ -44,7 +44,7 @@ const Navbar = () => {
   const [linkCloseButtonMobile, setLinkCloseButtonMobile] = useState(false);
 
   return (
-    <div className="flex lg:justify-between justify-center items-center h-24 relative">
+    <div className="flex lg:justify-between justify-center items-center h-[10vh] -24 relative px-7">
       <Link
         href="/"
         className="font-bold text-2xl lg:flex-grow-0 flex-1 text-center"
@@ -60,7 +60,7 @@ const Navbar = () => {
         </div>
       )}
       <div
-        className="lg:hidden cursor-pointer z-13 top-8 right-5 absolute"
+        className="lg:hidden cursor-pointer z-13 top-[3vh] right-[3vw] absolute"
         onClick={() => setLinkCloseButtonMobile(!linkCloseButtonMobile)}
       >
         {linkCloseButtonMobile ? <FaTimes size={32} /> : <FaBars size={30} />}
