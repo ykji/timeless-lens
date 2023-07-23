@@ -10,9 +10,9 @@ const About = () => {
           src="https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           fill={true}
           alt="cover photo"
-          className="object-cover grayscale"
+          className="grayscale"
         />
-        <div className="absolute bg-[#bdc253] p-6 text-white font-bold left-[2vw] bottom-[2vh] opacity-80">
+        <div className="absolute bg-[#bdc253] p-6 text-white font-bold left-[2vw] bottom-[2vh] opacity-80 z-">
           <h1 className="lg:text-2xl text-lg">Digital Storytellers</h1>
           <h2 className="lg:text-lg text-sm hidden lg:block font-semibold">
             Handcrafting award winning digital experiences

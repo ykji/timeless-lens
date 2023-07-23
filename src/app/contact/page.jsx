@@ -8,12 +8,12 @@ export const metadata = {
 
 const Contact = () => {
   return (
-    <div className="flex flex-col gap-6 mt-6 px-6 items-center w-full">
+    <div className="flex flex-col gap-6 mt-6 px-6 items-center">
       <h1 className="lg:text-3xl text-2xl font-bold">
         {"Let's Keep in Touch"}
       </h1>
-      <div className="flex flex-col lg:flex-row items-center gap-1 mt-10 px-20 w-full">
-        <div className="flex-1">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 mt-10 w-full">
+        <div className="flex-">
           <Image
             src="/contact.png"
             alt="contact photo"
@@ -21,24 +21,24 @@ const Contact = () => {
             height={400}
           />
         </div>
-        <form className="flex-1 flex flex-col gap-3 px-6">
+        <form className="flex- flex flex-col gap-3 lg:w-1/3 w-2/3">
           <input
             type="text"
             placeholder="name"
-            className="p-4 rounded-md text-lg mx-6 lg:mx-0"
+            className="p-4 rounded-md text-lg"
           />
           <input
             type="text"
             placeholder="email"
-            className="p-4 rounded-md text-lg mx-6 lg:mx-0"
+            className="p-4 rounded-md text-lg"
           />
           <textarea
-            className="p-4 rounded-md text-lg mx-6 lg:mx-0"
+            className="p-4 rounded-md text-lg"
             placeholder="message"
             cols="30"
             rows="10"
           ></textarea>
-          <Button url="#" text="Send" className="mx-6 lg:mx-0" />
+          <Button url="#" text="Send" className="ml-6 lg:mx-0" />
         </form>
       </div>
     </div>

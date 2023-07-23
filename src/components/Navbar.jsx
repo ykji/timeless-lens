@@ -55,12 +55,12 @@ const Navbar = () => {
         <Links />
       </div>
       {linkCloseButtonMobile && (
-        <div className="absolute top-0 z-12 h-screen w-screen bg-black flex justify-center items-center">
+        <div className="fixed top-0 z-20 h-screen w-screen bg-black flex justify-center items-center">
           <Links handleClick={() => setLinkCloseButtonMobile(false)} />
         </div>
       )}
       <div
-        className="lg:hidden cursor-pointer z-13 top-[3vh] right-[3vw] absolute"
+        className="lg:hidden cursor-pointer z-30 top-[3vh] right-[3vw] fixed"
         onClick={() => setLinkCloseButtonMobile(!linkCloseButtonMobile)}
       >
         {linkCloseButtonMobile ? <FaTimes size={32} /> : <FaBars size={30} />}
