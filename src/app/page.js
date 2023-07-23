@@ -8,11 +8,11 @@ export default function Home() {
     <div className="flex gap-12 items-center justify-between">
       <div className="flex-1 flex flex-col gap-10">
         <h1 className="text-7xl font-bold bg-gradient-to-b from-[#4a4c19] to-[#bbb] bg-clip-text text-transparent">
-          Unleash the Beauty of Your Captured Memories
+          Moments Frozen in Time
         </h1>
         <p className="text-2xl">
-          Committed to delivering exceptional photography services that
-          evoke emotions and preserve cherished memories for a lifetime.
+          Committed to delivering exceptional photography services that evoke
+          emotions and preserve cherished memories for a lifetime.
         </p>
         <Button url="/portfolio" text="See Our Works" />
       </div>
