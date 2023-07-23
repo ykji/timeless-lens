@@ -1,8 +1,8 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Hero from "public/hero.png";
 import Button from "@/components/Button";
-import React from "react";
 
 export default function Home() {
   return (
