@@ -25,15 +25,15 @@ const Contact = () => {
           <input
             type="text"
             placeholder="name"
-            className="p-4 rounded-md text-lg"
+            className="p-4 rounded-md text-lg bg-[#dde0a6] text-white"
           />
           <input
             type="text"
             placeholder="email"
-            className="p-4 rounded-md text-lg"
+            className="p-4 rounded-md text-lg bg-[#dde0a6] text-white"
           />
           <textarea
-            className="p-4 rounded-md text-lg"
+            className="p-4 rounded-md text-lg bg-[#dde0a6] text-white"
             placeholder="message"
             cols="30"
             rows="10"

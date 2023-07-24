@@ -11,6 +11,18 @@
 html,
 body {
   width: 100vw;
+}
+
+.dark {
   background-color: black;
   color: #bbb;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.theme{
+  transition: 1s all ease;
 }

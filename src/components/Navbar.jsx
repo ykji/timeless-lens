@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import DarkModeToggle from "./DarkModeToggle";
 import { FaTimes, FaBars } from "react-icons/fa";
-// import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import { ThemeContext } from "@/context/ThemeContext";
+import React, { useContext, useEffect, useState } from "react";
 // import { signOut, useSession } from "next-auth/react";
 
 export const links = [
@@ -40,6 +41,7 @@ export const links = [
 ];
 
 const Navbar = () => {
+  const { mode } = useContext(ThemeContext);
   // const session = useSession();
   const [linkCloseButtonMobile, setLinkCloseButtonMobile] = useState(false);
 
@@ -59,19 +61,24 @@ const Navbar = () => {
       >
         TimelessLens
       </Link>
-      <div className="lg:block hidden">
+      <div className="lg:flex items-center gap-5 hidden">
+        <DarkModeToggle />
         <Links />
       </div>
       {linkCloseButtonMobile && (
-        <div className="fixed top-0 z-20 h-screen w-screen bg-black flex justify-center items-center">
+        <div
+          className={`fixed top-0 z-20 h-screen w-screen flex justify-center transition-colors duration-1000 items-center ${
+            mode === "dark" ? "bg-black" : "bg-white"
+          }`}
+        >
           <Links handleClick={() => setLinkCloseButtonMobile(false)} />
         </div>
       )}
-      <div
-        className="lg:hidden cursor-pointer z-30 top-[3vh] right-[3vw] fixed"
-        onClick={() => setLinkCloseButtonMobile(!linkCloseButtonMobile)}
-      >
-        {linkCloseButtonMobile ? <FaTimes size={32} /> : <FaBars size={30} />}
+      <div className="lg:hidden flex items-center gap-5 cursor-pointer z-30 top-[3vh] right-[3vw] fixed">
+        <DarkModeToggle />
+        <div onClick={() => setLinkCloseButtonMobile(!linkCloseButtonMobile)}>
+          {linkCloseButtonMobile ? <FaTimes size={32} /> : <FaBars size={30} />}
+        </div>
       </div>
     </div>
   );
@@ -80,7 +87,6 @@ const Navbar = () => {
 const Links = ({ handleClick = () => {} }) => {
   return (
     <div className="flex lg:flex-row flex-col gap-5 items-center">
-      {/* <DarkModeToggle /> */}
       {links.map((link) => (
         <Link
           onClick={handleClick}

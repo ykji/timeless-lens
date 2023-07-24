@@ -8,25 +8,25 @@ const Portfolio = () => {
       <div className="flex lg:flex-row flex-col gap-10 mt-6">
         <div
           href="/portfolio/illustrations"
-          className="border-2 relative border-white h-96 w-72 lg:hover:text-green-400 bg-[url('/illustration.png')] bg-cover"
+          className="border-2 relative border-white h-96 w-72 text-white lg:hover:text-green-400 bg-[url('/illustration.png')] bg-cover"
         >
-          <span className="absolute bottom-3 right-3 text-3xl font-bold ">
+          <span className="absolute bottom-3 right-3 text-3xl font-bold">
             Illustrations
           </span>
         </div>
         <div
           href="/portfolio/videos"
-          className="border-2 relative border-white h-96 w-72 lg:hover:text-green-400 bg-[url('/videos.jpg')] bg-cover"
+          className="border-2 relative border-white h-96 w-72 text-white lg:hover:text-green-400 bg-[url('/videos.jpg')] bg-cover"
         >
-          <span className="absolute bottom-3 right-3 text-3xl font-bold ">
+          <span className="absolute bottom-3 right-3 text-3xl font-bold">
             Videos
           </span>
         </div>
         <div
           href="/portfolio/product-photography"
-          className="border-2 relative border-white h-96 w-72 lg:hover:text-green-400 bg-[url('/product.jpg')] bg-cover"
+          className="border-2 relative border-white h-96 w-72 text-white lg:hover:text-green-400 bg-[url('/product.jpg')] bg-cover"
         >
-          <span className="absolute bottom-3 right-3 text-3xl font-bold ">
+          <span className="absolute bottom-3 right-3 text-3xl font-bold">
             Product
           </span>
         </div>
