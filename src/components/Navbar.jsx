@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaTimes, FaBars } from "react-icons/fa";
 // import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 // import { signOut, useSession } from "next-auth/react";
@@ -42,6 +42,14 @@ export const links = [
 const Navbar = () => {
   // const session = useSession();
   const [linkCloseButtonMobile, setLinkCloseButtonMobile] = useState(false);
+
+  useEffect(() => {
+    if (linkCloseButtonMobile) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [linkCloseButtonMobile]);
 
   return (
     <div className="flex lg:justify-between justify-center items-center h-[10vh] relative px-7">
