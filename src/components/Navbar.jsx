@@ -74,11 +74,18 @@ const Navbar = () => {
           <Links handleClick={() => setLinkCloseButtonMobile(false)} />
         </div>
       )}
-      <div className="lg:hidden flex items-center gap-5 cursor-pointer z-30 top-[3vh] right-[3vw] fixed">
-        <DarkModeToggle />
-        <div onClick={() => setLinkCloseButtonMobile(!linkCloseButtonMobile)}>
-          {linkCloseButtonMobile ? <FaTimes size={32} /> : <FaBars size={30} />}
-        </div>
+      <div
+        className="lg:hidden cursor-pointer z-30 top-[3vh] right-[3vw] fixed"
+        onClick={() => setLinkCloseButtonMobile(!linkCloseButtonMobile)}
+      >
+        {linkCloseButtonMobile ? (
+          <div className="flex items-center gap-2">
+            <DarkModeToggle />
+            <FaTimes size={32} />
+          </div>
+        ) : (
+          <FaBars size={30} />
+        )}
       </div>
     </div>
   );

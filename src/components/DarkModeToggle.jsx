@@ -14,7 +14,7 @@ const DarkModeToggle = () => {
       <div className="text-xs">🌙</div>
       <div className="text-sm">🔆</div>
       <div
-        className="rounded-full w-4 h-4 bg-[#bdc253] absolute"
+        className="rounded-full w-5 h-5 bg-[#bdc253] absolute"
         style={mode === "light" ? { left: "4px" } : { right: "4px" }}
       />
     </div>

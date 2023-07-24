@@ -7,7 +7,8 @@ export const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const [mode, setMode] = useState("dark");
 
-  const toggle = () => {
+  const toggle = (e) => {
+    e.stopPropagation();
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
