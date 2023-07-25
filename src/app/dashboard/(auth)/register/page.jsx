@@ -3,12 +3,22 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const Register = () => {
+  const session = useSession();
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+
+  if (session.status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (session.status === "authenticated") {
+    router?.push("/dashboard");
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

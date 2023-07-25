@@ -4,8 +4,8 @@ import Link from "next/link";
 import DarkModeToggle from "./DarkModeToggle";
 import { FaTimes, FaBars } from "react-icons/fa";
 import { ThemeContext } from "@/context/ThemeContext";
+import { signOut, useSession } from "next-auth/react";
 import React, { useContext, useEffect, useState } from "react";
-// import { signOut, useSession } from "next-auth/react";
 
 export const links = [
   {
@@ -42,7 +42,6 @@ export const links = [
 
 const Navbar = () => {
   const { mode } = useContext(ThemeContext);
-  // const session = useSession();
   const [linkCloseButtonMobile, setLinkCloseButtonMobile] = useState(false);
 
   useEffect(() => {
@@ -54,7 +53,7 @@ const Navbar = () => {
   }, [linkCloseButtonMobile]);
 
   return (
-    <div className="flex lg:justify-between justify-center items-center h-[10vh] relative px-7">
+    <div className="flex lg:justify-between justify-center items-center h-[10vh] relative px-7 border-b lg:shadow-none shadow-md">
       <Link
         href="/"
         className="font-bold text-2xl lg:flex-grow-0 flex-1 text-center"
@@ -92,6 +91,8 @@ const Navbar = () => {
 };
 
 const Links = ({ handleClick = () => {} }) => {
+  const session = useSession();
+
   return (
     <div className="flex lg:flex-row flex-col gap-5 items-center">
       {links.map((link) => (
@@ -104,14 +105,14 @@ const Links = ({ handleClick = () => {} }) => {
           {link.title}
         </Link>
       ))}
-      {/* {session.status === "authenticated" && ( */}
-      <button
-        className="px-4 py-2 bg-[#bdc253] rounded-md text-white mt-6 lg:mt-0"
-        onClick={() => {}}
-      >
-        Logout
-      </button>
-      {/* )} */}
+      {session.status === "authenticated" && (
+        <button
+          className="px-4 py-2 bg-[#bdc253] rounded-md text-white mt-6 lg:mt-0"
+          onClick={signOut}
+        >
+          Logout
+        </button>
+      )}
     </div>
   );
 };

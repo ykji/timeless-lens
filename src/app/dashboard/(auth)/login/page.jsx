@@ -6,8 +6,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { getProviders, signIn, useSession } from "next-auth/react";
 
 const Login = ({ url }) => {
-  const session = useSession();
   const router = useRouter();
+  const session = useSession();
   const params = useSearchParams();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -18,12 +18,14 @@ const Login = ({ url }) => {
     setSuccess(params.get("success"));
   }, [params]);
 
+  useEffect(() => {
+    if (session.status === "authenticated") {
+      router?.push("/dashboard");
+    }
+  }, [session]);
+
   if (session.status === "loading") {
     return <p>Loading...</p>;
-  }
-
-  if (session.status === "authenticated") {
-    router?.push("/dashboard");
   }
 
   const handleSubmit = (e) => {
@@ -31,8 +33,8 @@ const Login = ({ url }) => {
     const email = e.target[0].value;
     const password = e.target[1].value;
 
+    setLoading(true);
     try {
-      setLoading(true);
       signIn("credentials", {
         email,
         password,
@@ -46,7 +48,7 @@ const Login = ({ url }) => {
   return (
     <div className="flex flex-col justify-center items-center gap-5 py-8 px-6">
       <h1 className="text-2xl lg:text-4xl font-bold">
-        {success ? success : "Welcome Back"}
+        {success ? success : "Welcome Back!"}
       </h1>
       <h2 className="font-semibold">Please log in to see the dashboard.</h2>
 
